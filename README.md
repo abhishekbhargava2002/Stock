@@ -1,5 +1,5 @@
 # Stockora by Trivoxa
-
+   
 Production-level monorepo structure for **Stockora**, an inventory management SaaS product created, sold, and managed by **Trivoxa**.
 
 ## Stack
