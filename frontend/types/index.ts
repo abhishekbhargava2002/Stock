@@ -1,0 +1,16 @@
+export type Status = "Active" | "Inactive" | "Draft" | "Completed" | "Cancelled" | "Pending";
+export type RoleName = "Trivoxa Admin" | "Client Super Admin" | "Admin" | "Facility Admin" | "Stock Manager" | "Sales Operator" | "Report Viewer" | "Auditor";
+export type Organization = { id: string; name: string; email: string; phone: string; address: string; gst?: string; facilityLimit?: number; userLimit?: number; status: Status; };
+export type Facility = { id: string; organizationId: string; name: string; code: string; city: string; state: string; isPrimary?: boolean; status: Status; };
+export type User = { id: string; name: string; email: string; phone: string; role: RoleName; facility?: string; status: Status; };
+export type Group = { id: string; name: string; description: string; status: Status; };
+export type Category = { id: string; name: string; group: string; parent?: string; description: string; status: Status; };
+export type Unit = { id: string; name: string; code: string; description?: string; status: Status; };
+export type Item = { id: string; name: string; sku: string; group: string; category: string; qty: number; unit: string; mrp: number; sellingPrice: number; lowStock: number; image?: string; status: Status; };
+export type Godown = { id: string; name: string; address: string; isDefault?: boolean; status: Status; };
+export type Vendor = { id: string; name: string; phone: string; email: string; gst?: string; address: string; status: Status; };
+export type StockLedger = { id: string; date: string; type: "OPENING_STOCK"|"STOCK_IN"|"STOCK_TRANSFER_IN"|"STOCK_TRANSFER_OUT"|"STOCK_OUT"|"DAILY_SALE"|"MANUAL_ADJUSTMENT_INCREASE"|"MANUAL_ADJUSTMENT_DECREASE"; ref: string; item: string; godown: string; quantityIn: number; quantityOut: number; balance: number; createdBy: string; };
+export type StockTransaction = { id: string; date: string; vendor?: string; source?: string; destination?: string; godown?: string; items: number; quantity: number; value: number; vehicle?: string; createdBy: string; status: Status; };
+export type Sale = { id: string; saleDate: string; facility: string; items: number; quantity: number; amount: number; mode: "Manual"|"Photo"|"Excel"; uploadedBy: string; status: Status; };
+export type IncentiveRule = { id: string; name: string; applicableOn: string; vendor: string; incentiveType: "Amount"|"Percentage"; ruleType: "Singular"|"Slabwise"; effectiveFrom: string; status: Status; };
+export type NotificationItem = { id: string; title: string; message: string; type: "Low Stock"|"Expiry"|"Transfer"|"Upload"|"Incentive"|"Adjustment"; date: string; read: boolean; };

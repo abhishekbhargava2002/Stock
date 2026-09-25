@@ -1,0 +1,2 @@
+import AuthLayout from "@/components/layout/AuthLayout"; import { Button, Field, Input } from "@/components/shared/FormBits";
+export default function Page(){ return <AuthLayout title="Reset Password" subtitle="Create a strong password for your Stockora account."><form className="space-y-4"><Field label="New Password" required><Input type="password"/></Field><Field label="Confirm Password" required><Input type="password"/></Field><Button className="w-full">Reset password</Button></form></AuthLayout> }

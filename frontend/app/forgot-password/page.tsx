@@ -1,0 +1,2 @@
+import AuthLayout from "@/components/layout/AuthLayout"; import { Button, Field, Input } from "@/components/shared/FormBits";
+export default function Page(){ return <AuthLayout title="Forgot Password" subtitle="Enter your email to receive reset instructions."><form className="space-y-4"><Field label="Email" required><Input placeholder="you@company.com"/></Field><Button className="w-full">Send reset link</Button></form></AuthLayout> }

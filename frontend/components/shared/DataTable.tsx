@@ -1,0 +1,3 @@
+import { ReactNode } from "react";
+export default function DataTable({ headers, children }: { headers: string[]; children: ReactNode }) { return <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm"><table className="w-full min-w-[760px] text-left text-sm"><thead className="bg-slate-50 text-slate-500"><tr>{headers.map(h=><th key={h} className="px-5 py-4 font-black">{h}</th>)}</tr></thead><tbody>{children}</tbody></table></div> }
+export function Td({ children, className="" }: { children: ReactNode; className?: string }) { return <td className={`border-t border-slate-100 px-5 py-4 align-middle font-semibold text-slate-700 ${className}`}>{children}</td> }

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F8FAFC; color: #1F2937; }
+* { box-sizing: border-box; }
+section { scroll-margin-top: 96px; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

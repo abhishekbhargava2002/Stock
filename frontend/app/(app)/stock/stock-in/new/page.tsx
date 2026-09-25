@@ -1,0 +1,1 @@
+import PageHeader from "@/components/shared/PageHeader"; import StockInForm from "@/components/forms/StockInForm"; export default function Page(){return <><PageHeader eyebrow="Stock In" title="Add Stock In" subtitle="Incoming stock increases quantity in selected godown and creates a ledger entry."/><StockInForm/></>}
